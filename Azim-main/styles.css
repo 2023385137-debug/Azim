@@ -1,0 +1,56 @@
+h1 {
+body{
+	background-color:#95B626;
+	color:green; }
+body {
+	border: solid 2px
+	font-family:arial; }
+    background -color:#95B626;}
+
+p {
+   color:people;}
+   
+
+ol{background-color:red:}
+   border: solid 2px
+   border-top-style: dotted;}
+   border-bottom-style : dashed;
+   padding-top: 5px}
+   
+  nav ul{
+	  background-color: gray;
+	  border; solid 1px black;
+	  list-style-type:none;
+	  padding:0px;
+	  margin:0px;
+  }
+  
+  nav a{
+	  text-decoration;none;
+	  color::green;
+	  padding: 10px;
+	  display: block:
+	  text-align:center;
+	  
+  }
+  
+nav a:hover{
+    background-color:blue;
+}
+nav li{
+float: left}
+
+.bawah ul{
+background-color:lightblue;}
+
+.bawah li{
+float: right;}
+.bawah a:hover{
+background-color:black;}	
+    
+
+
+
+
+
+	
