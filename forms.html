@@ -1,0 +1,95 @@
+<html>
+<head>
+    <title>Borang Form</title>
+</head>
+
+<body style="background-color:blue">
+
+<p><b>Fill your information</b></p>
+
+<form action="index.php" method="POST" style="background-color:green; color:black">
+
+    <label for="name">Name</label>
+    <input type="text" id="name" required>
+
+    <br><br>
+
+    <label for="phone">Phone Number</label>
+    <input type="phone" id="phone">
+
+    <br><br>
+
+    <label for="pass">Password</label>
+    <input type="password" id="pass" required>
+
+    <br><br>
+
+    <label for="email">Email</label>
+    <input type="email" id="email" required>
+
+    <br><br>
+
+    <b><label for="category">Category</label></b><br><br>
+
+    <label for="student">Student</label>
+    <input type="radio" id="student" name="category">
+
+    <label for="lecturer">Lecturer</label>
+    <input type="radio" id="lecturer" name="category">
+
+    <label for="visitor">Visitor</label>
+    <input type="radio" id="visitor" name="category">
+
+    <br><br>
+
+    <label for="purpose">Purpose</label><br>
+
+    <select id="purpose">
+        <option value="a">To complain</option>
+        <option value="a">To give money</option>
+        <option value="a">To ask money</option>
+    </select>
+
+    <br><br>
+
+    <label for="about">About</label>
+    <input type="about" id="about" required>
+
+    <br><br>
+
+    <label for="date">Date</label>
+    <input type="date" id="date">
+
+    <br><br>
+
+    <label for="time">Time</label>
+    <input type="time" id="time">
+
+    <br><br>
+
+    <label for="proof">Upload the evidence</label><br>
+    <input type="file" id="proof">
+
+    <br><br>
+
+    <label for="complaint">Write Your Suggestion</label><br>
+    <textarea id="complaint"></textarea>
+
+    <br><br>
+
+    <label for="rate">Rate Our Service</label><br>
+    <input type="radio">
+    <input type="radio">
+    <input type="radio">
+    <input type="radio">
+    <input type="radio">
+
+    <br><br>
+
+    <input type="submit">
+    <input type="reset">
+
+</form>
+
+</body>
+</html>
