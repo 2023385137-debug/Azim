@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohamad Azim | Personal Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0d6efd;     /* Main blue */
+            --primary-dark: #0a58ca;
+            --primary-light: #409cff;
+            --text: #212529;
+            --muted: #6c757d;
+            --bg: #f8fbff;
+            --card: #ffffff;
+            --border: #d0e3ff;
+            --shadow: 0 6px 16px rgba(13,110,253,0.12);
+            --nav-bg: #ffffff;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+        }
+        body {
+            background: linear-gradient(to bottom, #eef5ff, #f8fbff);
+            background-attachment: fixed;
+            color: var(--text);
+            line-height: 1.65;
+        }
+        /* Navbar */
+        nav {
+            background: var(--nav-bg);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            padding: 20px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            font-weight: 600;
+            color: var(--text);
+            font-size: 1.1rem;
+            padding: 10px 0;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary-dark), var(--primary-light));
+            transition: all 0.4s ease;
+            border-radius: 3px;
+            transform: translateX(-50%);
+        }
+        nav ul li a:hover, nav ul li a.active {
+            color: var(--primary);
+        }
+        nav ul li a:hover::after, nav ul li a.active::after {
+            width: 80%;
+        }
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #a0d8ff, #6cb6ff, #409cff);
+            color: white;
+            text-align: center;
+            padding: 100px 20px 80px;
+            box-shadow: var(--shadow);
+        }
+        header img {
+            width: 190px;
+            height: 190px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 8px solid rgba(255,255,255,0.3);
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+        header .matrik {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+            opacity: 0.95;
+        }
+        header p.subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        header .contact a {
+            color: white;
+            text-decoration: none;
+            margin: 0 25px;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+            opacity: 0.9;
+        }
+        header .contact a:hover {
+            opacity: 1;
+            transform: translateY(-3px);
+        }
+        header .contact i {
+            margin-right: 10px;
+        }
+        /* Resume Button */
+        .resume-btn {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 16px 36px;
+            background: linear-gradient(to right, var(--primary), var(--primary-light));
+            color: white;
+            font-weight: 700;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 8px 25px rgba(13,110,253,0.3);
+            transition: all 0.4s ease;
+        }
+        .resume-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(13,110,253,0.4);
+            background: linear-gradient(to right, var(--primary-dark), var(--primary));
+        }
+        .resume-btn i {
+            margin-right: 12px;
+        }
+        /* Container */
+        .container {
+            max-width: 1100px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+        section {
+            margin-bottom: 90px;
+        }
+        section h2 {
+            font-size: 2rem;
+            margin-bottom: 40px;
+            position: relative;
+            padding-left: 20px;
+            color: var(--text);
+        }
+        section h2::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 6px;
+            background: linear-gradient(to bottom, var(--primary), var(--primary-light));
+            border-radius: 4px;
+            box-shadow: 0 0 10px rgba(13,110,253,0.3);
+        }
+        /* Card */
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 35px;
+            transition: all 0.4s ease;
+            box-shadow: var(--shadow);
+        }
+        .card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 40px rgba(13,110,253,0.15);
+            border-color: var(--primary-light);
+        }
+        /* Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 35px;
+        }
+        /* Education Card */
+        .edu-card {
+            text-align: center;
+            padding: 30px;
+        }
+        .edu-card img {
+            width: 130px;
+            height: 130px;
+            object-fit: contain;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            transition: 0.3s;
+        }
+        .edu-card:hover img {
+            transform: scale(1.08);
+        }
+        .edu-card strong {
+            font-size: 1.3rem;
+            color: var(--text);
+            margin-bottom: 10px;
+            display: block;
+        }
+        .edu-card p {
+            color: var(--muted);
+            font-size: 1rem;
+        }
+        /* Progress Bar */
+        .progress {
+            height: 14px;
+            background: #e3ecff;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-top: 8px;
+        }
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(to right, var(--primary-dark), var(--primary), var(--primary-light));
+            width: 0;
+            transition: width 2s ease;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(13,110,253,0.3);
+        }
+        .language-item, .skill-item {
+            margin-bottom: 25px;
+        }
+        .language-item span, .skill-item span {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: var(--text);
+            font-size: 1.1rem;
+        }
+        /* Hobbies */
+        .hobby {
+            text-align: center;
+        }
+        .hobby i {
+            font-size: 4rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            transition: 0.3s;
+        }
+        .hobby:hover i {
+            transform: scale(1.15);
+            color: var(--primary-light);
+        }
+        .hobby p {
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 35px;
+            background: #f1f8ff;
+            border-top: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 20px;
+                flex-wrap: wrap;
+            }
+            header img {
+                width: 150px;
+                height: 150px;
+            }
+            header h1 {
+                font-size: 2.4rem;
+            }
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+<nav>
+    <ul>
+        <li><a href="#about" class="active">About</a></li>
+        <li><a href="#info">Personal Info</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#languages">Languages</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#hobbies">Hobbies</a></li>
+    </ul>
+</nav>
+<header>
+    <img src="azim.jpg" alt="Mohamad Azim">
+    <h1>Mohamad Azim Bin Zainal Abidin</h1>
+    <p class="matrik">2023385137</p>
+    <p class="subtitle">Diploma Student | Universiti Teknologi MARA (UiTM) Kampus Merbok</p>
+    <div class="contact">
+        <a href="https://www.instagram.com/matscele/" target="_blank"><i class="fab fa-instagram"></i> @matscele</a>
+        <a href="mailto:azimmohamad936@gmail.com"><i class="fas fa-envelope"></i> azimmohamad936@gmail.com</a>
+    </div>
+    <a href="resume.pdf" class="resume-btn" download>
+        <i class="fas fa-download"></i> Download My Resume
+    </a>
+</header>
+<div class="container">
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="card">
+            <p>
+                My name is <strong>Mohamad Azim Bin Zainal Abidin</strong>, and I am a diploma student in Information Management at
+                <strong>Universiti Teknologi MARA (UiTM) Kampus Merbok</strong>. I have a strong interest in technology, creativity,
+                and personal development. In my free time, I enjoy playing football, gaming, and watching movies.
+                This portfolio showcases my background, skills, and interests in a professional way.
+            </p>
+        </div>
+    </section>
+    <section id="info">
+        <h2>Personal Information</h2>
+        <div class="grid">
+            <div class="card">
+                <p><strong>Full Name:</strong> Mohamad Azim Bin Zainal Abidin</p>
+                <p><strong>Matric No:</strong> 2023385137</p>
+                <p><strong>Age:</strong> 21 years old</p>
+                <p><strong>Date of Birth:</strong> 24 September 2004</p>
+            </div>
+            <div class="card">
+                <p><strong>Gender:</strong> Male</p>
+                <p><strong>Nationality:</strong> Malaysian</p>
+                <p><strong>Religion:</strong> Islam</p>
+                <p><strong>Address:</strong> Parit Buntar, Perak</p>
+            </div>
+        </div>
+    </section>
+    <section id="education">
+        <h2>Education Background</h2>
+        <div class="grid">
+            <div class="card edu-card">
+                <img src="skkk.jpg" alt="SK Kampung Kedah Logo">
+                <strong>Sekolah Kebangsaan Kampung Kedah</strong>
+                <p>34200 Parit Buntar, Perak<br>Primary School (2011 - 2016)</p>
+            </div>
+            <div class="card edu-card">
+                <img src="smkpbg.jpg" alt="SMK Panglima Bukit Gantang Logo">
+                <strong>Sekolah Menengah Kebangsaan Panglima Bukit Gantang</strong>
+                <p>34200 Parit Buntar, Perak<br>Secondary School (2017 - 2022)</p>
+            </div>
+            <div class="card edu-card">
+                <img src="uitm.jpg" alt="UiTM Logo">
+                <strong>Universiti Teknologi MARA (UiTM) Kampus Seri Iskandar</strong>
+                <p>Pra-Diploma Perdagangan<br>(October 2022 - February 2023)</p>
+            </div>
+            <div class="card edu-card">
+                <img src="uitm.jpg" alt="UiTM Logo">
+                <strong>Universiti Teknologi MARA (UiTM) Kampus Merbok</strong>
+                <p>Diploma in Information Management<br>(March 2023 - Present)</p>
+            </div>
+        </div>
+    </section>
+    <section id="languages">
+        <h2>Languages</h2>
+        <div class="card">
+            <div class="language-item">
+                <span>Bahasa Melayu</span>
+                <div class="progress"><div class="progress-bar" style="width: 100%;"></div></div>
+            </div>
+            <div class="language-item">
+                <span>English</span>
+                <div class="progress"><div class="progress-bar" style="width: 75%;"></div></div>
+            </div>
+        </div>
+    </section>
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="card">
+            <div class="skill-item">
+                <span>Microsoft Word</span>
+                <div class="progress"><div class="progress-bar" style="width: 90%;"></div></div>
+            </div>
+            <div class="skill-item">
+                <span>Microsoft PowerPoint</span>
+                <div class="progress"><div class="progress-bar" style="width: 85%;"></div></div>
+            </div>
+            <div class="skill-item">
+                <span>Microsoft Excel</span>
+                <div class="progress"><div class="progress-bar" style="width: 75%;"></div></div>
+            </div>
+            <div class="skill-item">
+                <span>Communication</span>
+                <div class="progress"><div class="progress-bar" style="width: 80%;"></div></div>
+            </div>
+            <div class="skill-item">
+                <span>Creative Thinking</span>
+                <div class="progress"><div class="progress-bar" style="width: 85%;"></div></div>
+            </div>
+        </div>
+    </section>
+    <section id="hobbies">
+        <h2>Hobbies & Interests</h2>
+        <div class="grid">
+            <div class="card hobby">
+                <i class="fas fa-futbol"></i>
+                <p>Football</p>
+            </div>
+            <div class="card hobby">
+                <i class="fas fa-gamepad"></i>
+                <p>Gaming</p>
+            </div>
+            <div class="card hobby">
+                <i class="fas fa-film"></i>
+                <p>Watching Movies</p>
+            </div>
+        </div>
+    </section>
+</div>
+<footer>
+    Mohamad Azim Bin Zainal Abidin | 2023385137 | Individual Assignment IMD318 - Personal Portfolio Website
+</footer>
+<script>
+    window.addEventListener('scroll', () => {
+        let sections = document.querySelectorAll('section');
+        let navLinks = document.querySelectorAll('nav a');
+        let scrollPos = window.scrollY + 120;
+        sections.forEach((section, i) => {
+            if (section.offsetTop <= scrollPos && section.offsetTop + section.offsetHeight > scrollPos) {
+                navLinks.forEach(link => link.classList.remove('active'));
+                navLinks[i + 1].classList.add('active');
+            }
+        });
+    });
+</script>
+</body>
+</html>
