@@ -5,29 +5,38 @@
 
 <body style="background-color:blue">
 
-<p><b>Fill your information</b></p>
+<p><b>Fill your information</p>
 
-<button> onclick="mula()"> START </button>
+<button onclick="mula()"> START </button><br>
+<button onclick="darkmode() " style=
+"background-color:darkblue; color:Yellow">Dark Mode
+</button>
+<button onclick="lightmode()" style=
+"background-color:yellow; color: black">Light Mode
 
-<form action="index.php" method="POST" style="background-color:green; color:black">
 
-    <label for="name">Name</label>
-    <input type="text" id="name" required>
 
-    <br><br>
+<form onsubmit="hantaq()" return false;" style=
+"background-color;lightblue; color:green; border:1px black solid">
+
+   <label for="name" style="margin:1.5px; color:blue;
+   background-color:lightblue; color:green; border:1px black solid">
+    <input type="text" id="name" placeholder="Nama Penuh"><br>
+
+    
 
     <label for="phone">Phone Number</label>
-    <input type="phone" id="phone">
+    <input type="phone" id="phone"> <br>
 
     <br><br>
 
     <label for="pass">Password</label>
-    <input type="password" id="pass" required>
+    <input type="password" id="pass"><br>
 
     <br><br>
 
     <label for="email">Email</label>
-    <input type="email" id="email" required>
+    <input type="email" id="email" placeholder="Masukkan dengan
 
     <br><br>
 
@@ -46,17 +55,11 @@
 
     <label for="purpose">Purpose</label><br>
 
-    <select id="purpose">
+    <select id="purpose" style="width:100%;">
         <option value="a">To complain</option>
         <option value="a">To give money</option>
         <option value="a">To ask money</option>
     </select>
-
-    <br><br>
-
-    <label for="about">About</label>
-    <input type="about" id="about" required>
-
     <br><br>
 
     <label for="date">Date</label>
@@ -64,14 +67,12 @@
 
     <br><br>
 
-    <label for="time">Time</label>
+    <label>Time</label>
     <input type="time" id="time">
-
     <br><br>
 
     <label for="proof">Upload the evidence</label><br>
     <input type="file" id="proof">
-
     <br><br>
 
     <label for="complaint">Write Your Suggestion</label><br>
@@ -90,8 +91,12 @@
 
     <input type="submit">
     <input type="reset">
+	
+<hr>
+<h3> Submitted Info </h3>
+<p id="result"></p>
 
-</form>
+
 <script>
 alert("Selamat Datang")
 function mula() {
@@ -99,7 +104,25 @@ function mula() {
 	}
 	function hantaq(){
 	var nama = document.getElementById("name").value;
-	var fon+
+	var fon);
+	
+	document.getElementById("result").innerHTML = "Terima kasih "
+	+ nama + " kami akan hubungi anda di " + fon + " atau " +
+	email:
+	
+function darkmode(){
+    document.getElementById("first-page").style.color=
+	"red";
+	document.getElementById("first-page")
+	style.backgroundColor="darkblue";
+}
 
+function lightmode()
+    document.getElementById("first-page").style.color=
+	"balck";
+	document.getElementById("first-page")
+	style.backgroundColor="lightblue";
+}
+</script>
 </body>
 </html>
