@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Borang Form</title>
+</head>
+
+<body id="first-page" style="background-color:blue">
+
+<p><b>Fill your information</b></p>
+
+<button onclick="mula()"> START </button><br>
+
+<button onclick="darkmode()" style="background-color:darkblue; color:yellow">Dark Mode</button>
+<button onclick="lightmode()" style="background-color:yellow; color: black">Light Mode</button> <br><br>
+
+<button onclick="largeText()">LARGE TEXT</button>
+<button onclick="smallText()">SMALL TEXT</button>
+
+<br><br>
+<form id="borang" onsubmit="hantaq(); return false;" style="background-color:lightblue; color:green; border:1px black solid; padding: 10px;">
+    <button type="button" onclick="borang()"> CHANGE FORM COLOR</button> <br><br>
+
+    <label for="name">Nama Penuh:</label><br>
+    <input type="text" id="name" placeholder="Nama Penuh"><br><br>
+
+    <label for="phone">Phone Number</label><br>
+    <input type="tel" id="phone"> <br><br>
+
+    <label for="pass">Password</label><br>
+    <input type="password" id="pass"><br><br>
+
+    <label for="email">Email</label><br>
+    <input type="email" id="email" placeholder="Masukkan emel anda"><br><br>
+
+    <b><label>Category</label></b><br>
+    <label for="student">Student</label>
+    <input type="radio" id="student" name="category" value="Student">
+
+    <label for="lecturer">Lecturer</label>
+    <input type="radio" id="lecturer" name="category" value="Lecturer">
+
+    <label for="visitor">Visitor</label>
+    <input type="radio" id="visitor" name="category" value="Visitor">
+
+    <br><br>
+
+    <label for="purpose">Purpose</label><br>
+    <select id="purpose" style="width:100%;">
+        <option value="To complain">To complain</option>
+        <option value="To give money">To give money</option>
+        <option value="To ask money">To ask money</option>
+    </select>
+    <br><br>
+
+    <label for="date">Date</label>
+    <input type="date" id="date">
+
+    <br><br>
+
+    <label>Time</label>
+    <input type="time" id="time">
+    <br><br>
+
+    <label for="proof">Upload the evidence</label><br>
+    <input type="file" id="proof">
+    <br><br>
+
+    <label for="complaint">Write Your Suggestion</label><br>
+    <textarea id="complaint"></textarea>
+
+    <br><br>
+
+    <label for="rate">Rate Our Service</label><br>
+    <input type="radio" name="rate" value="1">
+    <input type="radio" name="rate" value="2">
+    <input type="radio" name="rate" value="3">
+    <input type="radio" name="rate" value="4">
+    <input type="radio" name="rate" value="5">
+
+    <br><br>
+
+    <input type="submit" value="Submit">
+    <input type="reset" value="Reset">
+</form>
+	
+<hr>
+<h3> Submitted Info </h3>
+<p id="result"></p>
+
+<script>
+    alert("Selamat Datang");
+
+    function mula() {
+        alert("Boleh start isi borang. Tunggu apa lagi");
+    }
+
+    function hantaq() {
+        var nama = document.getElementById("name").value;
+        var fon = document.getElementById("phone").value;
+        var email = document.getElementById("email").value;
+        
+        document.getElementById("result").innerHTML = "Terima kasih **" + nama + "**, kami akan hubungi anda di **" + fon + "** atau **" + email + "**.";
+    }
+
+    function darkmode() {
+        document.getElementById("first-page").style.color = "red";
+        document.getElementById("first-page").style.backgroundColor = "darkblue";
+    }
+
+    function lightmode() {
+        document.getElementById("first-page").style.color = "black";
+        document.getElementById("first-page").style.backgroundColor = "lightblue";
+    }
+
+    function largeText() {
+        document.getElementById("first-page").style.fontSize = "200%";
+    }
+
+    function smallText() {
+        document.getElementById("first-page").style.fontSize = "50%";
+    }
+
+    function borang() {
+        document.getElementById("borang").style.backgroundColor = "lightgreen";
+    }
+</script>
+</body>
+</html>
